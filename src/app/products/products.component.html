@@ -1,0 +1,17 @@
+<div class="row g-4">
+  @for (pro of Products; track $index) {
+  <div class="col-md-6 col-lg-4 col-xl-3" >
+    <div class="card" appCustom>
+      <img [src]="pro.image" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ pro.name }}</h5>
+        <p class="card-text">
+          {{ pro.desc }}
+        </p>
+        <hr />
+        <p class="card-text text-end fw-bold text-danger">{{ pro.rate }} / 5</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>

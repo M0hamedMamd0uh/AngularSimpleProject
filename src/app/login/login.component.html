@@ -1,0 +1,35 @@
+<div class="row">
+  <h2 class="text-center text-danger fw-bold">Login</h2>
+
+  <div class="mt-5 col-lg-8 offset-lg-2">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="m-auto">
+      <div class="input-group input-group-sm mb-3 ">
+        <span class="input-group-text w-25 justify-content-center p-2">Email</span>
+        <input formControlName="email" type="email" class="form-control p-2" />
+      </div>
+      @if (validEmail) {
+      <p class="alert alert-danger p-1 text-center">Email is Wrong</p>
+      }
+
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text w-25 justify-content-center p-2"
+          >Password</span
+        >
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control p-2"
+        />
+      </div>
+      @if (validPassword) {
+      <p class="alert alert-danger p-1 text-center">
+        Password is Wrong must contain [Character | Numbers] & length from [5 :
+        10]
+      </p>
+      }
+      <div class="input-group input-group-sm mb-3 justify-content-end">
+        <input type="submit" class="btn btn-danger w-100 p-2" value="Login" />
+      </div>
+    </form>
+  </div>
+</div>

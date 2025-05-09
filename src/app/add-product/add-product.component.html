@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-lg-8 offset-lg-2">
+    <form [formGroup]="myForm" (ngSubmit)="addProduct()" class="m-auto">
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text w-25 justify-content-center">Name</span>
+        <input formControlName="name" type="text" class="form-control" />
+      </div>
+      @if (validProductName) {
+      <p class="alert alert-danger p-1 text-center">
+        Name is Wrong [3:15] characters
+      </p>
+      }
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text w-25 justify-content-center"
+          >Description</span
+        >
+        <input formControlName="desc" type="text" class="form-control" />
+      </div>
+      @if (validProductDesc) {
+      <p class="alert alert-danger p-1 text-center">
+        Description is Wrong [5:100] characters
+      </p>
+      }
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text w-25 justify-content-center">Image</span>
+        <!-- <input formControlName="image" type="text" class="form-control" /> -->
+        <input placeholder="https://placehold.co/150x100?text=Product" value="https://placehold.co/150x100?text=Product" type="text" class="form-control" disabled/>
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text w-25 justify-content-center">Rate</span>
+        <input formControlName="rate" type="text" class="form-control" />
+      </div>
+      @if (validProductRate) {
+      <p class="alert alert-danger p-1 text-center">Rate is Wrong [0:5]</p>
+      }
+      <div class="input-group input-group-sm mb-3 justify-content-end">
+        <input type="submit" class="btn btn-danger w-100" value="Add Product" />
+      </div>
+    </form>
+  </div>
+</div>
